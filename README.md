@@ -12,7 +12,7 @@ import (
         "github.com/dvrg/detect"
 )
 
-func main()
+func main() {
         var userAgent = "Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Gecko) Version/3.0 Mobile/4A102 Safari/419"
 
         platform := detect.GetPlatform(userAgent)
