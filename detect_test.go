@@ -4,7 +4,7 @@ import "testing"
 
 var expected = []struct {
 	ua       string
-	platform Platform
+	platform PlatformType
 }{
 	// iPhone
 	{"Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Gecko) Version/3.0 Mobile/4A102 Safari/419", IOS},
@@ -55,8 +55,8 @@ var expected = []struct {
 
 func TestGetPlatform(t *testing.T) {
 	for _, test := range expected {
-		if test.platform != GetPlatform(test.ua) {
-			t.Errorf("expected platform %s (UserAgent: %s) to be %d", GetPlatform(test.ua), test.ua, test.platform)
+		if test.platform != Platform(test.ua) {
+			t.Errorf("expected platform %s (UserAgent: %s) to be %d", Platform(test.ua), test.ua, test.platform)
 		}
 	}
 }

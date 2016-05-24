@@ -3,7 +3,7 @@ package detect
 import (
 	"strings"
 
-	"github.com/dvrg/useragent"
+	"github.com/mvader/useragent"
 )
 
 func isiOS(os, platform string) bool {
@@ -27,8 +27,8 @@ func contains(haystack, needle string) bool {
 	return strings.Contains(haystack, needle)
 }
 
-// GetPlatform returns the platform of the device with the given User-Agent
-func GetPlatform(userAgent string) Platform {
+// Platform returns the platform of the device with the given User-Agent.
+func Platform(userAgent string) PlatformType {
 	var (
 		ua       = useragent.New(userAgent)
 		os       = strings.ToLower(ua.OS())
@@ -51,7 +51,7 @@ func GetPlatform(userAgent string) Platform {
 
 // IsMobile returns true if the visitor is using a mobile device
 func IsMobile(ua string) bool {
-	switch GetPlatform(ua) {
+	switch Platform(ua) {
 	case IOS, ANDROID, WINDOWSPHONE, MOBILE:
 		return true
 	}

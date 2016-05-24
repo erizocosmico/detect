@@ -1,16 +1,17 @@
 package detect
 
-type Platform byte
+// PlatformType is the kind of platform of the device.
+type PlatformType byte
 
 const (
-	// Desktop operating system
-	DESKTOP Platform = iota
-	// Mobile operating system (android, ios, WP, ...)
+	// DESKTOP operating system
+	DESKTOP PlatformType = 1 << iota
+	// MOBILE operating system (android, ios, WP, ...)
 	MOBILE
-	// Android operating system
+	// ANDROID operating system
 	ANDROID
-	// iOS operating system (iPhone, iPad, iPod, ...)
+	// IOS operating system (iPhone, iPad, iPod, ...)
 	IOS
-	// Windows Phone operating system
+	// WINDOWSPHONE operating system
 	WINDOWSPHONE
 )
