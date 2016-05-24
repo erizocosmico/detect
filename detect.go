@@ -37,22 +37,22 @@ func Platform(userAgent string) PlatformType {
 
 	switch true {
 	case isiOS(os, platform):
-		return IOS
+		return IOs
 	case isAndroid(os, platform):
-		return ANDROID
+		return Android
 	case isWindowsPhone(userAgent, os, platform, ua.Mobile()):
-		return WINDOWSPHONE
+		return WindowsPhone
 	case ua.Mobile():
-		return MOBILE
+		return Mobile
 	default:
-		return DESKTOP
+		return Desktop
 	}
 }
 
 // IsMobile returns true if the visitor is using a mobile device
 func IsMobile(ua string) bool {
 	switch Platform(ua) {
-	case IOS, ANDROID, WINDOWSPHONE, MOBILE:
+	case IOs, Android, WindowsPhone, Mobile:
 		return true
 	}
 	return false

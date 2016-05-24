@@ -5,10 +5,10 @@ package detect
 import "fmt"
 
 const (
-	_PlatformType_name_0 = "DESKTOPMOBILE"
-	_PlatformType_name_1 = "ANDROID"
-	_PlatformType_name_2 = "IOS"
-	_PlatformType_name_3 = "WINDOWSPHONE"
+	_PlatformType_name_0 = "DesktopMobile"
+	_PlatformType_name_1 = "Android"
+	_PlatformType_name_2 = "IOs"
+	_PlatformType_name_3 = "WindowsPhone"
 )
 
 var (
